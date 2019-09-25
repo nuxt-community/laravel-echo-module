@@ -1,0 +1,38 @@
+{
+  "name": "@nuxtjs/laravel-echo",
+  "version": "1.0.0",
+  "description": "Laravel Echo for Nuxt.js",
+  "repository": "nuxt-community/laravel-echo",
+  "license": "MIT",
+  "contributors": [
+    "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/module.js",
+  "scripts": {
+    "dev": "nuxt test/fixture",
+    "lint": "eslint --ext .js,.vue .",
+    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
+  },
+  "dependencies": {
+    "laravel-echo": "^1.6.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "@nuxtjs/eslint-config": "latest",
+    "@nuxtjs/module-test-utils": "latest",
+    "codecov": "latest",
+    "eslint": "latest",
+    "husky": "latest",
+    "jest": "latest",
+    "nuxt-edge": "latest",
+    "standard-version": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
