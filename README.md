@@ -21,7 +21,7 @@ yarn add @nuxtjs/laravel-echo # or npm install @nuxtjs/laravel-echo
 2. Add `@nuxtjs/laravel-echo` to the `modules` section of `nuxt.config.js`
 
 ```js
-{
+export default {
   modules: [
     // Simple usage
     '@nuxtjs/laravel-echo',
@@ -35,7 +35,7 @@ yarn add @nuxtjs/laravel-echo # or npm install @nuxtjs/laravel-echo
 ### Using top level options
 
 ```js
-{
+export default {
   modules: [
     '@nuxtjs/laravel-echo'
   ],
