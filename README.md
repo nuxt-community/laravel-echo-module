@@ -10,19 +10,35 @@
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
+## Requirements
+
+If you use the broadcaster `pusher`, you need to ensure that you have `pusher-js` installed:
+
+```bash
+yarn add pusher-js # or npm install pusher-js
+```
+
+If you use the broadcaster `socket.io`, you need to ensure that you have `socket.io-client` installed:
+
+```bash
+yarn add socket.io-client # or npm install socket.io-client
+```
+
 ## Setup
 
 1. Add `@nuxtjs/laravel-echo` dependency to your project
 
 ```bash
-yarn add @nuxtjs/laravel-echo # or npm install @nuxtjs/laravel-echo
+yarn add --dev @nuxtjs/laravel-echo # or npm install --save-dev @nuxtjs/laravel-echo
 ```
 
-2. Add `@nuxtjs/laravel-echo` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/laravel-echo` to the `buildModules` section of `nuxt.config.js`
+
+:warning: If you are using Nuxt older than **v2.9** you have to install module as a `dependency` (No `--dev` or `--save-dev` flags) and also use `modules` section in `nuxt.config.js` instead of `buildModules`.
 
 ```js
 export default {
-  modules: [
+  buildModules: [
     // Simple usage
     '@nuxtjs/laravel-echo',
 
@@ -36,7 +52,7 @@ export default {
 
 ```js
 export default {
-  modules: [
+  buildModules: [
     '@nuxtjs/laravel-echo'
   ],
   echo: {
