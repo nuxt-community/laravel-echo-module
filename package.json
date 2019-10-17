@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/laravel-echo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Laravel Echo for Nuxt.js",
   "repository": "nuxt-community/laravel-echo",
   "license": "MIT",
