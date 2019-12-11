@@ -66,7 +66,7 @@ export default {
 ### `broadcaster`
 
 - Type: `String`
-- Default: `undefined`
+- Default: `'null'`
 
 You can use `'pusher'`, `'socket.io'` or `'null'`.
 
