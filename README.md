@@ -63,6 +63,15 @@ export default {
 
 ## Options
 
+### `broadcaster`
+
+- Type: `String`
+- Default: `undefined`
+
+You can use `'pusher'`, `'socket.io'` or `'null'`.
+
+See https://laravel.com/docs/broadcasting#driver-prerequisites
+
 ### `authModule`
 
 - Type: `Boolean`
@@ -83,8 +92,6 @@ Connect the connector on login, if `authModule` is set `true`.
 - Default: `false`
 
 Disconnect the connector on logout, if `authModule` is set `true`.
-
-> See all options in [Laravel Echo](https://github.com/laravel/echo).
 
 ## Usage
 
