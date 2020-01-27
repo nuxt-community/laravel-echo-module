@@ -84,7 +84,7 @@ If you have plugins that need to access `$echo`, you can use `echo.plugins` opti
 `nuxt.config.js`
 
 ```js
-{
+export default {
   buildModules: [
     '@nuxtjs/laravel-echo'
   ],
