@@ -4,6 +4,9 @@ module.exports = {
     resourceHints: false
   },
   buildModules: [
-    { handler: require('../../') }
-  ]
+    { handler: require('../../../') }
+  ],
+  echo: {
+    plugins: [ '~/plugins/echo.js' ]
+  }
 }
