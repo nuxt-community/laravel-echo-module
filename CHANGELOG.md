@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/nuxt-community/laravel-echo/compare/v1.0.3...v1.1.0) (2020-01-27)
+
+
+### Features
+
+* add plugins option ([#8](https://github.com/nuxt-community/laravel-echo/issues/8)) ([da90251](https://github.com/nuxt-community/laravel-echo/commit/da90251))
+
 ### [1.0.3](https://github.com/nuxt-community/laravel-echo/compare/v1.0.2...v1.0.3) (2019-12-11)
 
 
