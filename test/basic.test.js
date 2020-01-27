@@ -1,10 +1,10 @@
 const { setup, loadConfig, get, url } = require('@nuxtjs/module-test-utils')
 
-describe('module', () => {
+describe('basic', () => {
   let nuxt
 
   beforeAll(async () => {
-    ({ nuxt } = (await setup(loadConfig(__dirname))))
+    ({ nuxt } = (await setup(loadConfig(__dirname, 'basic'))))
   }, 60000)
 
   afterAll(async () => {

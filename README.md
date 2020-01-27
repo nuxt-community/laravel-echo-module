@@ -72,6 +72,37 @@ You can use `'pusher'`, `'socket.io'` or `'null'`.
 
 See https://laravel.com/docs/broadcasting#driver-prerequisites
 
+### `plugins`
+
+- Type: `Array`
+- Default: `null`
+
+If you have plugins that need to access `$echo`, you can use `echo.plugins` option.
+
+> **Note:** Plugins are pushed in client mode only (`ssr: false`).
+
+`nuxt.config.js`
+
+```js
+{
+  buildModules: [
+    '@nuxtjs/laravel-echo'
+  ],
+  echo: {
+     plugins: [ '~/plugins/echo.js' ]
+  }
+}
+```
+
+`plugins/echo.js`
+
+```js
+export default function ({ $echo }) {
+  // Echo is available here
+  console.log($echo)
+}
+```
+
 ### `authModule`
 
 - Type: `Boolean`
@@ -115,12 +146,6 @@ export default {
 }
 </script>
 ```
-
-## Development
-
-1. Clone this repository
-2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
 
 ## License
 
