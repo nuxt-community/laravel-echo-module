@@ -17,7 +17,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "laravel-echo": "^1.7.0"
+    "laravel-echo": "^1.8.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
