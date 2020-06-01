@@ -7,6 +7,7 @@ module.exports = {
     { handler: require('../../../') }
   ],
   echo: {
-    plugins: [ '~/plugins/echo.js' ]
+    sanctum: true,
+    plugins: ['~/plugins/echo.js']
   }
 }
