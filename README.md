@@ -63,6 +63,38 @@ export default {
 
 ## Options
 
+### `auth`
+
+- Type: `Object`
+- Default:
+
+```js
+{
+  headers: {}
+}
+```
+
+You can define the `header` with a function:
+
+```js
+{
+  async headers ({ app }) {
+    const cookies = await app.$auth.$storage.getCookies()
+
+    return {
+      'X-XSRF-TOKEN': cookies['XSRF-TOKEN']
+    }
+  }
+}
+```
+
+### `authEndpoint`
+
+- Type: `String`
+- Default: `/broadcasting/auth`
+
+See [https://laravel.com/docs/7.x/broadcasting#defining-authorization-routes](https://laravel.com/docs/7.x/broadcasting#defining-authorization-routes)
+
 ### `broadcaster`
 
 - Type: `String`
@@ -71,6 +103,27 @@ export default {
 You can use `'pusher'`, `'socket.io'` or `'null'`.
 
 See [https://laravel.com/docs/broadcasting#driver-prerequisites](https://laravel.com/docs/broadcasting#driver-prerequisites)
+
+### `host`
+
+- Type: `String`
+- Default: `null`
+
+The host to connector `socket.io`.
+
+### `key`
+
+- Type: `String`
+- Default: `null`
+
+Your [Pusher Channels](https://pusher.com/channels) key.
+
+### `namespace`
+
+- Type: `String`
+- Default: `App.Events`
+
+See [https://laravel.com/docs/7.x/broadcasting#namespaces](https://laravel.com/docs/7.x/broadcasting#namespaces)
 
 ### `plugins`
 
