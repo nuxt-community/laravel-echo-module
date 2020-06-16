@@ -2,7 +2,7 @@
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
-[![Circle CI][circle-ci-src]][circle-ci-href]
+[![Github Actions CI][github-actions-ci-src]][github-actions-ci-href]
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
@@ -70,7 +70,7 @@ export default {
 
 You can use `'pusher'`, `'socket.io'` or `'null'`.
 
-See https://laravel.com/docs/broadcasting#driver-prerequisites
+See [https://laravel.com/docs/broadcasting#driver-prerequisites](https://laravel.com/docs/broadcasting#driver-prerequisites)
 
 ### `plugins`
 
@@ -154,17 +154,17 @@ export default {
 Copyright (c) Nuxt Community
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/laravel-echo/latest.svg?style=flat-square
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/laravel-echo/latest.svg
 [npm-version-href]: https://npmjs.com/package/@nuxtjs/laravel-echo
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/laravel-echo.svg?style=flat-square
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/laravel-echo.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/laravel-echo
 
-[circle-ci-src]: https://img.shields.io/circleci/project/github/nuxt-community/laravel-echo.svg?style=flat-square
-[circle-ci-href]: https://circleci.com/gh/nuxt-community/laravel-echo
+[github-actions-ci-src]: https://github.com/nuxt-community/laravel-echo/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-community/laravel-echo/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/laravel-echo.svg?style=flat-square
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/laravel-echo.svg
 [codecov-href]: https://codecov.io/gh/nuxt-community/laravel-echo
 
-[license-src]: https://img.shields.io/npm/l/@nuxtjs/laravel-echo.svg?style=flat-square
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/laravel-echo.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/laravel-echo
