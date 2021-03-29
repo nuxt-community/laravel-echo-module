@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.0](https://github.com/nuxt-community/laravel-echo/compare/v1.1.0...v2.0.0-alpha.0) (2021-03-29)
+
+
+### Features
+
+* miragte from auth module v4 to v5 ([#14](https://github.com/nuxt-community/laravel-echo/issues/14)) ([31a1098](https://github.com/nuxt-community/laravel-echo/commit/31a10987dde1f94d3a11ff67da0b35a97481130f))
+
 ## [1.1.0](https://github.com/nuxt-community/laravel-echo/compare/v1.0.3...v1.1.0) (2020-01-27)
 
 
