@@ -1,3 +1,4 @@
+
 import Echo from 'laravel-echo'
 
 <% if (options.broadcaster === 'pusher') { %>
@@ -30,7 +31,7 @@ function getHeaders ({ app }) {
   return headers
 }
 
-export default (ctx, inject) => {
+export default function (ctx, inject) {
   const options = <%= serialize(options) %>
   options.auth = options.auth || {}
   options.auth.headers = {
@@ -38,7 +39,13 @@ export default (ctx, inject) => {
     ...getHeaders(ctx)
   }
 
-  const echo = new Echo(options)
+  // runtimeConfig
+  const runtimeConfig = ctx.$config && ctx.$config.echo || {}
+
+  const echo = new Echo({
+    ...options,
+    ...runtimeConfig
+  })
 
   <% if (options.authModule) { %>
   if (ctx.app.$auth) {

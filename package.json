@@ -2,32 +2,51 @@
   "name": "@nuxtjs/laravel-echo",
   "version": "2.0.0-alpha.0",
   "description": "Laravel Echo for Nuxt.js",
+  "keywords": [
+    "nuxt",
+    "module",
+    "nuxt-module",
+    "laravel",
+    "echo"
+  ],
   "repository": "nuxt-community/laravel-echo",
   "license": "MIT",
   "contributors": [
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
-  "main": "lib/module.js",
+  "exports": {
+    ".": {
+      "require": "./dist/module.js",
+      "import": "./dist/module.es.js"
+    },
+    "./": "./"
+  },
+  "main": "./dist/module.js",
+  "types": "./dist/module.d.ts",
   "files": [
-    "lib"
+    "dist",
+    "templates"
   ],
   "scripts": {
-    "lint": "eslint --ext .js,.vue .",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint && jest"
+    "build": "siroc build",
+    "lint": "eslint --ext .js,.ts,.vue .",
+    "release": "yarn build && yarn lint && yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "jest"
   },
   "dependencies": {
     "laravel-echo": "^1.10.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "latest",
-    "@commitlint/config-conventional": "latest",
-    "@nuxtjs/eslint-config": "latest",
-    "@nuxtjs/module-test-utils": "latest",
+    "@babel/preset-typescript": "latest",
+    "@nuxt/test-utils": "latest",
+    "@nuxt/types": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
     "eslint": "latest",
-    "husky": "latest",
     "jest": "latest",
-    "nuxt-edge": "latest",
+    "nuxt": "latest",
+    "siroc": "latest",
     "standard-version": "latest"
   },
   "publishConfig": {
