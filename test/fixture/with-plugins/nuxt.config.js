@@ -1,7 +1,6 @@
-module.exports = {
-  rootDir: __dirname,
+export default {
   buildModules: [
-    { handler: require('../../../') }
+    '../../../src/module.ts'
   ],
   echo: {
     plugins: [
