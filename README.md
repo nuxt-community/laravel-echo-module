@@ -160,11 +160,11 @@ Copyright (c) Nuxt Community
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/laravel-echo.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/laravel-echo
 
-[github-actions-ci-src]: https://github.com/nuxt-community/laravel-echo/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/nuxt-community/laravel-echo/actions?query=workflow%3Aci
+[github-actions-ci-src]: https://github.com/nuxt-community/laravel-echo-module/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-community/laravel-echo-module/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/laravel-echo.svg
-[codecov-href]: https://codecov.io/gh/nuxt-community/laravel-echo
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/laravel-echo-module.svg
+[codecov-href]: https://codecov.io/gh/nuxt-community/laravel-echo-module
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/laravel-echo.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/laravel-echo

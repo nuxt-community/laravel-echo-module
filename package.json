@@ -9,7 +9,7 @@
     "laravel",
     "echo"
   ],
-  "repository": "nuxt-community/laravel-echo",
+  "repository": "nuxt-community/laravel-echo-module",
   "license": "MIT",
   "contributors": [
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
