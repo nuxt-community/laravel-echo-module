@@ -1,21 +1,14 @@
-import { resolve } from 'path'
+import { resolve, join } from 'path'
+import { existsSync } from 'fs'
 import defu from 'defu'
 import { Module } from '@nuxt/types'
 import { NuxtOptionsPlugin } from '@nuxt/types/config/plugin'
 import { name, version } from '../package.json'
-
-const CONFIG_KEY = 'echo'
-
-export interface ModuleOptions {
-  broadcaster?: string,
-  plugins?: string[],
-  authModule?: boolean,
-  connectOnLogin?: boolean,
-  disconnectOnLogout?: boolean,
-}
+import { ModuleOptions } from './runtime/types'
 
 const DEFAULTS: ModuleOptions = {
   broadcaster: 'null',
+  encrypted: false,
   authModule: false,
   connectOnLogin: true,
   disconnectOnLogout: true
@@ -24,29 +17,40 @@ const DEFAULTS: ModuleOptions = {
 const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
   this.nuxt.hook('builder:extendPlugins', (plugins: NuxtOptionsPlugin[]) => {
     const options: ModuleOptions = defu(
-      this.options[CONFIG_KEY] || {},
+      this.options.echo || {},
       moduleOptions,
       DEFAULTS
     )
 
-    // Copy echo plugin
-    const { dst } = this.addTemplate({
-      src: resolve(__dirname, '../templates/plugin.js'),
-      fileName: `${CONFIG_KEY}.js`,
+    const runtimeDir = resolve(__dirname, 'runtime')
+    this.options.alias['~echo'] = runtimeDir
+    this.options.build.transpile.push(runtimeDir, 'laravel-echo', 'defu')
+
+    const optionsPath: string = this.nuxt.resolver.resolveAlias(options.optionsPath ||
+      join(this.options.dir!.app || 'app', 'laravel-echo', 'options.js'))
+
+    // Register options template
+    this.addTemplate({
+      fileName: `laravel-echo/options.${optionsPath && optionsPath.endsWith('ts') ? 'ts' : 'js'}`,
+      src: existsSync(optionsPath) ? optionsPath : resolve(__dirname, './runtime/options.js'),
       options
     })
 
-    plugins.push({
-      ssr: false,
-      src: resolve(this.options.buildDir, dst)
+    // Copy echo plugin
+    const { dst } = this.addTemplate({
+      src: resolve(__dirname, './runtime/plugin.js'),
+      fileName: 'laravel-echo/plugin.js',
+      options: {
+        broadcaster: options.broadcaster,
+        encrypted: options.encrypted
+      }
     })
+
+    plugins.push(resolve(this.options.buildDir, dst))
 
     // Extend echo with plugins
     if (options.plugins) {
-      options.plugins.forEach(p => plugins.push({
-        ssr: false,
-        src: p
-      }))
+      options.plugins.forEach(p => plugins.push(p))
 
       delete options.plugins
     }
@@ -54,10 +58,5 @@ const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
 }
 
 ;(nuxtModule as any).meta = { name, version }
-
-declare module '@nuxt/types' {
-  interface NuxtConfig { [CONFIG_KEY]?: ModuleOptions } // Nuxt 2.14+
-  interface Configuration { [CONFIG_KEY]?: ModuleOptions } // Nuxt 2.9 - 2.13
-}
 
 export default nuxtModule

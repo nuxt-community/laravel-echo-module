@@ -3,7 +3,8 @@ import { setupTest, getNuxt, get, url } from '@nuxt/test-utils'
 describe('with-plugins', () => {
   setupTest({
     server: true,
-    fixture: 'fixture/with-plugins'
+    fixture: 'fixture/with-plugins',
+    configFile: 'nuxt.config.ts'
   })
 
   test('echo plugin should be defined', async () => {

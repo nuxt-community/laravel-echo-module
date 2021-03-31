@@ -1,4 +1,4 @@
 module.exports = {
   preset: '@nuxt/test-utils',
-  collectCoverageFrom: ['src/**']
+  collectCoverageFrom: ['src/**', '!src/runtime/**']
 }

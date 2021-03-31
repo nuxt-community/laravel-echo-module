@@ -6,8 +6,9 @@
     "nuxt",
     "module",
     "nuxt-module",
-    "laravel",
-    "echo"
+    "laravel-echo",
+    "echo",
+    "laravel"
   ],
   "repository": "nuxt-community/laravel-echo-module",
   "license": "MIT",
@@ -19,13 +20,13 @@
       "require": "./dist/module.js",
       "import": "./dist/module.es.js"
     },
-    "./": "./"
+    "./runtime/*": "./dist/runtime/*",
+    "./package.json": "./package.json"
   },
   "main": "./dist/module.js",
   "types": "./dist/module.d.ts",
   "files": [
-    "dist",
-    "templates"
+    "dist"
   ],
   "scripts": {
     "build": "siroc build",
@@ -34,12 +35,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "defu": "^3.2.2",
     "laravel-echo": "^1.10.0"
   },
   "devDependencies": {
-    "@babel/preset-typescript": "latest",
     "@nuxt/test-utils": "latest",
     "@nuxt/types": "latest",
+    "@nuxt/typescript-build": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",

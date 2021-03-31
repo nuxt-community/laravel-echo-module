@@ -3,7 +3,8 @@ import { setupTest, getNuxt, get, url } from '@nuxt/test-utils'
 describe('basic', () => {
   setupTest({
     server: true,
-    fixture: 'fixture/basic'
+    fixture: 'fixture/basic',
+    configFile: 'nuxt.config.ts'
   })
 
   test('echo should be defined', async () => {
