@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.1](https://github.com/nuxt-community/laravel-echo-module/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-03-31)
+
+
+### Features
+
+* rewrite typescript ([d826db0](https://github.com/nuxt-community/laravel-echo-module/commit/d826db0572c2cea499a0ce595f65c692a74e7971))
+* support runtime config ([3495fb8](https://github.com/nuxt-community/laravel-echo-module/commit/3495fb86cb3b6394a7348e06ac044d3f9e7e072a))
+
 ## [2.0.0-alpha.0](https://github.com/nuxt-community/laravel-echo/compare/v1.1.0...v2.0.0-alpha.0) (2021-03-29)
 
 
