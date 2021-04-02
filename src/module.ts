@@ -16,7 +16,7 @@ const DEFAULTS: ModuleOptions = {
 
 const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
   this.nuxt.hook('builder:extendPlugins', (plugins: NuxtOptionsPlugin[]) => {
-    const options: ModuleOptions = defu(
+    const options = defu(
       this.options.echo || {},
       moduleOptions,
       DEFAULTS

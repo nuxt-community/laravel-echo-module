@@ -10,10 +10,12 @@ declare module '@nuxt/types' {
     $echo: Echo;
   }
 
+  // Nuxt 2.14+
   interface NuxtConfig {
     echo?: Partial<ModuleOptions>
   }
 
+  // Nuxt 2.9 - 2.13
   interface Configuration {
     echo?: Partial<ModuleOptions>
   }

@@ -8,4 +8,8 @@ export interface ModuleOptions extends EchoOptions {
   connectOnLogin?: boolean,
   disconnectOnLogout?: boolean,
   optionsPath?: string,
+  onBeforeConnect?: Function,
+  onAfterConnect?: Function,
+  onBeforeDisconnect?: Function,
+  onAfterDisconnect?: Function,
 }

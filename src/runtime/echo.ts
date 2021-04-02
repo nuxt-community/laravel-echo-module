@@ -5,7 +5,7 @@ import { ModuleOptions } from './types'
 
 export class Echo extends BaseEcho {
   ctx: Context;
-  config: Partial<ModuleOptions>;
+  config: ModuleOptions;
 
   constructor (ctx: Context, config: Partial<ModuleOptions> = {}) {
     // when enabled authModule, start broadcaster with null
@@ -58,11 +58,28 @@ export class Echo extends BaseEcho {
         if (this.config.connectOnLogin && loggedIn) {
           // set broadcaster when user logged in
           this.options.broadcaster = this.config.broadcaster
+
+          if (this.config.onBeforeConnect) {
+            await this.config.onBeforeConnect()
+          }
+
           this.connect()
+
+          if (this.config.onAfterConnect) {
+            await this.config.onAfterConnect()
+          }
         }
 
         if (this.config.disconnectOnLogout && !loggedIn && this.connector) {
+          if (this.config.onBeforeDisconnect) {
+            await this.config.onBeforeDisconnect()
+          }
+
           this.disconnect()
+
+          if (this.config.onAfterDisconnect) {
+            await this.config.onAfterDisconnect()
+          }
         }
       }).bind(this)
     }
