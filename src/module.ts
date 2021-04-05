@@ -46,11 +46,14 @@ const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
       }
     })
 
-    plugins.push(resolve(this.options.buildDir, dst))
+    plugins.push({
+      src: resolve(this.options.buildDir, dst),
+      ssr: false
+    })
 
     // Extend echo with plugins
     if (options.plugins) {
-      options.plugins.forEach(p => plugins.push(p))
+      options.plugins.forEach(p => plugins.push({ src: p, ssr: false }))
 
       delete options.plugins
     }
