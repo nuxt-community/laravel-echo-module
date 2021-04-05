@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.2](https://github.com/nuxt-community/laravel-echo-module/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-04-05)
+
+
+### Features
+
+* add hooks before/after connect/disconnect ([87b5dfa](https://github.com/nuxt-community/laravel-echo-module/commit/87b5dfa2d2876cad09991b43eaed136c69b005f4))
+
+
+### Bug Fixes
+
+* disable plugin on ssr ([51b8d2e](https://github.com/nuxt-community/laravel-echo-module/commit/51b8d2e6737004c4644704bdd99d875b8dfd7282))
+
 ## [2.0.0-alpha.1](https://github.com/nuxt-community/laravel-echo-module/compare/v2.0.0-alpha.0...v2.0.0-alpha.1) (2021-03-31)
 
 
