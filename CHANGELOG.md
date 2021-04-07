@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0-alpha.3](https://github.com/nuxt-community/laravel-echo-module/compare/v2.0.0-alpha.2...v2.0.0-alpha.3) (2021-04-07)
+
+
+### Bug Fixes
+
+* hooks ([b5a1e07](https://github.com/nuxt-community/laravel-echo-module/commit/b5a1e07e7d73831fd0e7bd616b228ddfa36e9a5b))
+* options ([96a5060](https://github.com/nuxt-community/laravel-echo-module/commit/96a5060c4f091e0e48454710dd4a645b6de63177))
+
 ## [2.0.0-alpha.2](https://github.com/nuxt-community/laravel-echo-module/compare/v2.0.0-alpha.1...v2.0.0-alpha.2) (2021-04-05)
 
 
