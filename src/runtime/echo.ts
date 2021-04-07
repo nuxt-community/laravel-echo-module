@@ -50,6 +50,30 @@ export class Echo extends BaseEcho {
     return defu(headers, this.options.auth.headers)
   }
 
+  async connect () {
+    if (this.config && this.config.onBeforeConnect) {
+      await this.config.onBeforeConnect()
+    }
+
+    super.connect()
+
+    if (this.config && this.config.onAfterConnect) {
+      await this.config.onAfterConnect()
+    }
+  }
+
+  async disconnect () {
+    if (this.config && this.config.onBeforeDisconnect) {
+      await this.config.onBeforeDisconnect()
+    }
+
+    super.disconnect()
+
+    if (this.config && this.config.onAfterDisconnect) {
+      await this.config.onAfterDisconnect()
+    }
+  }
+
   watchAuthState () {
     if (this.config.authModule && this.ctx.app.$auth) {
       this.ctx.app.$auth.$storage.watchState('loggedIn', async (loggedIn: boolean) => {
@@ -58,28 +82,11 @@ export class Echo extends BaseEcho {
         if (this.config.connectOnLogin && loggedIn) {
           // set broadcaster when user logged in
           this.options.broadcaster = this.config.broadcaster
-
-          if (this.config.onBeforeConnect) {
-            await this.config.onBeforeConnect()
-          }
-
-          this.connect()
-
-          if (this.config.onAfterConnect) {
-            await this.config.onAfterConnect()
-          }
+          await this.connect()
         }
 
         if (this.config.disconnectOnLogout && !loggedIn && this.connector) {
-          if (this.config.onBeforeDisconnect) {
-            await this.config.onBeforeDisconnect()
-          }
-
-          this.disconnect()
-
-          if (this.config.onAfterDisconnect) {
-            await this.config.onAfterDisconnect()
-          }
+          await this.disconnect()
         }
       }).bind(this)
     }
