@@ -1,3 +1,4 @@
+import defu from 'defu'
 import options from './options'
 import { Echo } from '~echo'
 
@@ -19,7 +20,7 @@ export default async function (ctx, inject) {
   if (!window.io) window.io = require('socket.io-client')
   <% } %>
 
-  const echo = new Echo(ctx, echoOptions)
+  const echo = new Echo(ctx, defu(echoOptions, <%= serializeFunction(options) %>))
   await echo.init()
 
   inject('echo', echo)

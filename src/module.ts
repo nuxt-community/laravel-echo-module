@@ -29,6 +29,8 @@ const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
     const optionsPath: string = this.nuxt.resolver.resolveAlias(options.optionsPath ||
       join(this.options.dir!.app || 'app', 'laravel-echo', 'options.js'))
 
+    delete options.optionsPath
+
     // Register options template
     this.addTemplate({
       fileName: `laravel-echo/options.${optionsPath && optionsPath.endsWith('ts') ? 'ts' : 'js'}`,
@@ -40,10 +42,7 @@ const nuxtModule: Module<ModuleOptions> = function (moduleOptions) {
     const { dst } = this.addTemplate({
       src: resolve(__dirname, './runtime/plugin.js'),
       fileName: 'laravel-echo/plugin.js',
-      options: {
-        broadcaster: options.broadcaster,
-        encrypted: options.encrypted
-      }
+      options
     })
 
     plugins.push({
