@@ -16,15 +16,12 @@
     "Ricardo Gobbo de Souza <ricardogobbosouza@yahoo.com.br>"
   ],
   "exports": {
-    ".": {
-      "require": "./dist/module.js",
-      "import": "./dist/module.es.js"
-    },
-    "./runtime/*": "./dist/runtime/*",
+    ".": "./dist/module.js",
+    "./dist/runtime/*": "./dist/runtime/*",
     "./package.json": "./package.json"
   },
   "main": "./dist/module.js",
-  "types": "./dist/module.d.ts",
+  "types": "./dist/runtime.d.ts",
   "files": [
     "dist"
   ],
