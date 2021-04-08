@@ -1,15 +1,14 @@
 import { setupTest, getNuxt, get, url } from '@nuxt/test-utils'
 
-describe('with-plugins', () => {
+describe('custom-options-path', () => {
   setupTest({
     server: true,
-    fixture: 'fixture/with-plugins'
+    fixture: 'fixture/custom-options-path'
   })
 
-  test('echo plugin should be defined', async () => {
+  test('onAfterConnect should be defined', async () => {
     const window = await getNuxt().renderAndGetWindow(url('/'))
-    expect(window.$nuxt.$echo).toBeDefined()
-    expect(window.$nuxt.$echo.plugin).toBe(true)
+    expect(window.$nuxt.$echo.options.onAfterConnect).toBeDefined()
   })
 
   test('render', async () => {
