@@ -32,7 +32,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "defu": "^3.2.2",
+    "defu": "^5.0.1",
     "laravel-echo": "^1.10.0"
   },
   "devDependencies": {
