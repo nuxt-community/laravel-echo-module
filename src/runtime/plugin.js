@@ -20,7 +20,7 @@ export default async function (ctx, inject) {
   if (!window.io) window.io = require('socket.io-client')
   <% } %>
 
-  const echo = new Echo(ctx, defu(echoOptions, <%= serializeFunction(options) %>))
+  const echo = new Echo(ctx, defu((ctx.$config && ctx.$config.echo || {}), echoOptions, <%= serializeFunction(options) %>))
   await echo.init()
 
   inject('echo', echo)
