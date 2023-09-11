@@ -6,7 +6,7 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> Laravel Echo for Nuxt.js
+> Laravel Echo for Nuxt 2
 
 [📖 **Release Notes**](./CHANGELOG.md)
 
