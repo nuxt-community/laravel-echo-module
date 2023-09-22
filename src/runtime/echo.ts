@@ -30,7 +30,7 @@ export class Echo extends BaseEcho {
 
       if (strategy.options.name === 'laravelSanctum') {
         headers.referer = location.origin
-        headers['X-XSRF-TOKEN'] = this.ctx.app.$auth.$storage.getCookies()['XSRF-TOKEN']
+        headers.Authorization = 'Bearer' + this.ctx.app.$auth.$storage.getCookies()['XSRF-TOKEN']
       } else {
         const tokenName = strategy.options.token.name || 'Authorization'
         const token = strategy.token.get()
