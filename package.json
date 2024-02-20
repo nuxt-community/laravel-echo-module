@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "defu": "^3.2.2",
-    "laravel-echo": "^1.10.0"
+    "laravel-echo": "^1.16.0"
   },
   "devDependencies": {
     "@nuxt/test-utils": "latest",
